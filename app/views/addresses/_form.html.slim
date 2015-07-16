@@ -52,7 +52,7 @@
       .form-group
         label.control-label
           | State
-        = f.text_field :state, class: 'form-control'
+        = f.select :state, options_for_select(get_states, @address.state), {}, class: 'form-control'
   .row
     .col-md-6.col-md-offset-3
       .form-group
