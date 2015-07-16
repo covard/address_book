@@ -1,0 +1,65 @@
+= form_for @address do |f|
+  - if @address.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@address.errors.count, "error")} prohibited this address from being saved:"
+      ul
+        - @address.errors.full_messages.each do |message|
+          li = message
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | First Name
+        = f.text_field :first_name, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | Last Name
+        = f.text_field :last_name, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | Email
+        = f.email_field :email, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | Phone
+        = f.text_field :phone, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | Address 1
+        = f.text_field :address_1, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | Address 2
+        = f.text_field :address_2, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | City
+        = f.text_field :city, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | State
+        = f.text_field :state, class: 'form-control'
+  .row
+    .col-md-6.col-md-offset-3
+      .form-group
+        label.control-label
+          | Zip
+        = f.text_field :zip, class: 'form-control'
+    .row
+      .col-md-6.col-md-offset-3    
+        = f.submit 'Submit', class:'btn btn-primary'
+        = link_to "Cancel", addresses_path, class: 'btn btn-default btn-cancel'

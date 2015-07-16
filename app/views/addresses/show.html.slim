@@ -1,0 +1,27 @@
+p#notice.text-center = notice
+h1.text-center
+  = @address.full_name
+.row
+  .col-md-6.col-md-offset-3
+    .well
+      dl.dl-horizontal
+        dt Name
+        dd = @address.full_name
+        dt Email
+        dd = @address.email
+        dt Phone
+        dd = @address.phone
+        dt Address 1
+        dd = @address.address_1
+        dt Address 2
+        dd = @address.address_2
+        dt City
+        dd = @address.city
+        dt State
+        dd = @address.state
+        dt Zip
+        dd = @address.zip
+.row.text-center
+  = link_to 'Edit', edit_address_path(@address)
+  '|
+  = link_to 'Back', addresses_path
