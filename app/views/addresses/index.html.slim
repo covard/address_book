@@ -1,4 +1,7 @@
-h1 Listing Addresses
+h1
+  | Listing Addresses
+.span.pull-right
+  = link_to 'New Address', new_address_path
 
 table.table.table-striped
   tr
@@ -28,5 +31,3 @@ table.table.table-striped
       td = link_to 'Destroy', address, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
-
-= link_to 'New Address', new_address_path
